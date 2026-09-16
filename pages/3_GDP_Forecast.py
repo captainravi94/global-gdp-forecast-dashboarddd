@@ -18,7 +18,7 @@ forecast = forecast[forecast["Country"] != "nan"]
 # Country selector
 country = st.selectbox(
     "Select Country",
-    sorted(hist["Country"].unique())
+    sorted(hist["Country"].dropna().astype(str).unique())
 )
 
 # Filter data
