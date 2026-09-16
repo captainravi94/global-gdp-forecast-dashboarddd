@@ -14,7 +14,7 @@ df = df[df["Country"] != "nan"]
 # Country selector
 country = st.selectbox(
     "Select Country",
-    sorted(df["Country"].unique())
+    sorted(df["Country"].dropna().astype(str).unique())
 )
 
 # Filter data
